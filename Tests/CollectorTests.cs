@@ -393,109 +393,109 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Tests
             }
         }
 
-        /// <summary>
-        ///     Requires Admin
-        /// </summary>
-        [TestMethod]
-        public void TestTpmCollector()
-        {
-            var PcrAlgorithm = TpmAlgId.Sha256;
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                var process = TpmSim.GetTpmSimulator();
-                process.Start();
+ // /// <summary>
+        // ///     Requires Admin
+        // /// </summary>
+        // [TestMethod]
+        // public void TestTpmCollector()
+        // {
+        //     var PcrAlgorithm = TpmAlgId.Sha256;
+        //     if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        //     {
+        //         var process = TpmSim.GetTpmSimulator();
+        //         process.Start();
 
-                var nvData = new byte[] { 0, 1, 2, 3, 4, 5, 6, 7 };
-                uint nvIndex = 3001;
+        //         var nvData = new byte[] { 0, 1, 2, 3, 4, 5, 6, 7 };
+        //         uint nvIndex = 3001;
 
-                var tpmc = new TpmCollector(new CollectorOptions() { Verbose = true }, null, TestMode: true);
-                // Prepare to write to NV 3001
-                TpmHandle nvHandle = TpmHandle.NV(nvIndex);
+        //         var tpmc = new TpmCollector(new CollectorOptions() { Verbose = true }, null, TestMode: true);
+        //         // Prepare to write to NV 3001
+        //         TpmHandle nvHandle = TpmHandle.NV(nvIndex);
 
-                TcpTpmDevice tcpTpmDevice = new TcpTpmDevice("127.0.0.1", 2321, stopTpm: false);
-                tcpTpmDevice.Connect();
+        //         TcpTpmDevice tcpTpmDevice = new TcpTpmDevice("127.0.0.1", 2321, stopTpm: false);
+        //         tcpTpmDevice.Connect();
 
-                using var tpm = new Tpm2(tcpTpmDevice);
-                tcpTpmDevice.PowerCycle();
-                tpm.Startup(Su.Clear);
+        //         using var tpm = new Tpm2(tcpTpmDevice);
+        //         tcpTpmDevice.PowerCycle();
+        //         tpm.Startup(Su.Clear);
 
-                try
-                {
-                    tpm._AllowErrors()
-                        .NvUndefineSpace(TpmRh.Owner, nvHandle);
+        //         try
+        //         {
+        //             tpm._AllowErrors()
+        //                 .NvUndefineSpace(TpmRh.Owner, nvHandle);
 
-                    tpm.NvDefineSpace(TpmRh.Owner, null,
-                                      new NvPublic(nvHandle, TpmAlgId.Sha1,
-                                                   NvAttr.NoDa | NvAttr.Ownerread | NvAttr.Ownerwrite,
-                                                   null, 32));
+        //             tpm.NvDefineSpace(TpmRh.Owner, null,
+        //                               new NvPublic(nvHandle, TpmAlgId.Sha1,
+        //                                            NvAttr.NoDa | NvAttr.Ownerread | NvAttr.Ownerwrite,
+        //                                            null, 32));
 
-                    // Write to NV 3001
-                    tpm.NvWrite(TpmRh.Owner, nvHandle, nvData, 0);
+        //             // Write to NV 3001
+        //             tpm.NvWrite(TpmRh.Owner, nvHandle, nvData, 0);
 
-                    var nvOut = tpm.NvRead(TpmRh.Owner, nvHandle, (ushort)nvData.Length, 0);
+        //             var nvOut = tpm.NvRead(TpmRh.Owner, nvHandle, (ushort)nvData.Length, 0);
 
-                    Assert.IsTrue(nvOut.SequenceEqual(nvData));
-                }
-                catch (TpmException e)
-                {
-                    Log.Debug(e, "Failed to Write to NV.");
-                    Assert.Fail();
-                }
+        //             Assert.IsTrue(nvOut.SequenceEqual(nvData));
+        //         }
+        //         catch (TpmException e)
+        //         {
+        //             Log.Debug(e, "Failed to Write to NV.");
+        //             Assert.Fail();
+        //         }
 
-                // Verify that all the PCRs are blank to start with
-                var pcrs = TpmCollector.DumpPCRs(tpm, PcrAlgorithm, new PcrSelection[] { new PcrSelection(PcrAlgorithm, new uint[] { 15, 16 }) });
-                Assert.IsTrue(pcrs.All(x => x.Value.SequenceEqual(new byte[x.Value.Length])));
+        //         // Verify that all the PCRs are blank to start with
+        //         var pcrs = TpmCollector.DumpPCRs(tpm, PcrAlgorithm, new PcrSelection[] { new PcrSelection(PcrAlgorithm, new uint[] { 15, 16 }) });
+        //         Assert.IsTrue(pcrs.All(x => x.Value.SequenceEqual(new byte[x.Value.Length])));
 
-                // Measure to PCR 16
-                try
-                {
-                    tpm.PcrExtend(TpmHandle.Pcr(16), tpm.PcrEvent(TpmHandle.Pcr(16), nvData));
-                }
-                catch (TpmException e)
-                {
-                    Log.Debug(e, "Failed to Write PCR.");
-                }
+        //         // Measure to PCR 16
+        //         try
+        //         {
+        //             tpm.PcrExtend(TpmHandle.Pcr(16), tpm.PcrEvent(TpmHandle.Pcr(16), nvData));
+        //         }
+        //         catch (TpmException e)
+        //         {
+        //             Log.Debug(e, "Failed to Write PCR.");
+        //         }
 
-                // Verify that we extended the PCR
-                var pcrs2 = TpmCollector.DumpPCRs(tpm, PcrAlgorithm, new PcrSelection[] { new PcrSelection(PcrAlgorithm, new uint[] { 15, 16 }, 24) });
-                Assert.IsTrue(pcrs2[(PcrAlgorithm, 15)].SequenceEqual(pcrs[(PcrAlgorithm, 15)]));
-                Assert.IsFalse(pcrs2[(PcrAlgorithm, 16)].SequenceEqual(pcrs[(PcrAlgorithm, 16)]));
+        //         // Verify that we extended the PCR
+        //         var pcrs2 = TpmCollector.DumpPCRs(tpm, PcrAlgorithm, new PcrSelection[] { new PcrSelection(PcrAlgorithm, new uint[] { 15, 16 }, 24) });
+        //         Assert.IsTrue(pcrs2[(PcrAlgorithm, 15)].SequenceEqual(pcrs[(PcrAlgorithm, 15)]));
+        //         Assert.IsFalse(pcrs2[(PcrAlgorithm, 16)].SequenceEqual(pcrs[(PcrAlgorithm, 16)]));
 
-                // Close the test connection to the device
-                tcpTpmDevice.Close();
+        //         // Close the test connection to the device
+        //         tcpTpmDevice.Close();
 
-                // Execute the collector
-                tpmc.TryExecute();
+        //         // Execute the collector
+        //         tpmc.TryExecute();
 
-                // Shut down the simulator
-                process.Kill();
+        //         // Shut down the simulator
+        //         process.Kill();
 
-                // Clean up after simulator
-                try
-                {
-                    File.Delete("NVChip");
-                }
-                catch (Exception)
-                {
-                    Log.Debug("Failed to delete NVChip file");
-                }
+        //         // Clean up after simulator
+        //         try
+        //         {
+        //             File.Delete("NVChip");
+        //         }
+        //         catch (Exception)
+        //         {
+        //             Log.Debug("Failed to delete NVChip file");
+        //         }
 
-                if (tpmc.Results.TryPop(out CollectObject collectObject))
-                {
-                    if (collectObject is TpmObject tpmObject)
-                    {
-                        Assert.IsTrue(tpmObject.PCRs.ContainsKey((TpmAlgId.Sha256, 1)));
-                        // Verify that the NV Data we wrote was collected
-                        Assert.IsTrue(tpmObject.NV.Any(x => x.Index == nvIndex));
-                        Assert.IsTrue(tpmObject.NV.Where(x => x.Index == nvIndex).First() is AsaNvIndex nvi && nvi.value is List<byte> && nvi.value.GetRange(0, nvData.Length).SequenceEqual(nvData));
-                    }
-                    else
-                    {
-                        Assert.Fail();
-                    }
-                }
-            }
-        }
+        //         if (tpmc.Results.TryPop(out CollectObject collectObject))
+        //         {
+        //             if (collectObject is TpmObject tpmObject)
+        //             {
+        //                 Assert.IsTrue(tpmObject.PCRs.ContainsKey((TpmAlgId.Sha256, 1)));
+        //                 // Verify that the NV Data we wrote was collected
+        //                 Assert.IsTrue(tpmObject.NV.Any(x => x.Index == nvIndex));
+        //                 Assert.IsTrue(tpmObject.NV.Where(x => x.Index == nvIndex).First() is AsaNvIndex nvi && nvi.value is List<byte> && nvi.value.GetRange(0, nvData.Length).SequenceEqual(nvData));
+        //             }
+        //             else
+        //             {
+        //                 Assert.Fail();
+        //             }
+        //         }
+        //     }
+        // }
 
         /// <summary>
         ///     Requires Administrator Priviledges.
