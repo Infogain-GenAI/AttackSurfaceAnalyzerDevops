@@ -33,10 +33,10 @@ steps:
   
 - task: SonarQubePrepare@6
   inputs:
-    SonarQube: 'sq_connect_asa' # Replace with your SonarQube service connection name
+    SonarQube: 'sq_connect_crm' # Replace with your SonarQube service connection name
     scannerMode: 'MSBuild'
-    projectKey: 'GenAI_project' # Replace with your project key
-    projectName: 'GenAI_project' # Replace with your project name
+    projectKey: 'Infogain-GenAICRM' # Replace with your project key
+    projectName: 'Infogain-GenAICRM' # Replace with your project name
     
 - task: VSBuild@1
   inputs:
