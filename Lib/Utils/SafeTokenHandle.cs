@@ -7,9 +7,9 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Utils
     /// <summary>
     ///     Represents a wrapper class for a token handle.
     /// </summary>
-    internal class SafeTokenHandle : SafeHandleZeroOrMinusOneIsInvalid
+    public class SafeTokenHandle : SafeHandleZeroOrMinusOneIsInvalid
     {
-        internal SafeTokenHandle(IntPtr handle) : base(true)
+        public SafeTokenHandle(IntPtr handle) : base(true)
         {
             base.SetHandle(handle);
         }
