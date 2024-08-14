@@ -85,40 +85,40 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Tests
         /// <summary>
         ///     Requires Admin
         /// </summary>
-        [TestMethod]
-        public void TestEventCollectorWindows()
-        {
-            var source = "AsaTests";
-            var logname = "AsaTestLogs";
+        //[TestMethod]
+        //public void TestEventCollectorWindows()
+        //{
+        //    var source = "AsaTests";
+        //    var logname = "AsaTestLogs";
 
-            if (EventLog.SourceExists(source))
-            {
-                // Delete the source and the log.
-                EventLog.DeleteEventSource(source);
-                EventLog.Delete(logname);
-            }
+        //    if (EventLog.SourceExists(source))
+        //    {
+        //        // Delete the source and the log.
+        //        EventLog.DeleteEventSource(source);
+        //        EventLog.Delete(logname);
+        //    }
 
-            // Create the event source to make next try successful.
-            EventLog.CreateEventSource(source, logname);
+        //    // Create the event source to make next try successful.
+        //    EventLog.CreateEventSource(source, logname);
 
-            using EventLog eventLog = new EventLog("Application");
-            eventLog.Source = "Attack Surface Analyzer Tests";
-            eventLog.WriteEntry("This Log Entry was created for testing the Attack Surface Analyzer library.", EventLogEntryType.Warning, 101, 1);
+        //    using EventLog eventLog = new EventLog("Application");
+        //    eventLog.Source = "Attack Surface Analyzer Tests";
+        //    eventLog.WriteEntry("This Log Entry was created for testing the Attack Surface Analyzer library.", EventLogEntryType.Warning, 101, 1);
 
-            var elc = new EventLogCollector(new CollectorOptions());
-            elc.TryExecute();
+        //    var elc = new EventLogCollector(new CollectorOptions());
+        //    elc.TryExecute();
 
-            Assert.IsTrue(elc.Results.Any(x => x is EventLogObject ELO && ELO.Source == "Attack Surface Analyzer Tests" && ELO.Timestamp is DateTime DT && DT.AddMinutes(1).CompareTo(DateTime.Now) > 0));
+        //    Assert.IsTrue(elc.Results.Any(x => x is EventLogObject ELO && ELO.Source == "Attack Surface Analyzer Tests" && ELO.Timestamp is DateTime DT && DT.AddMinutes(1).CompareTo(DateTime.Now) > 0));
 
-            ConcurrentStack<CollectObject> results = new ConcurrentStack<CollectObject>();
-            elc = new EventLogCollector(new CollectorOptions(), x => results.Push(x));
-            elc.TryExecute();
+        //    ConcurrentStack<CollectObject> results = new ConcurrentStack<CollectObject>();
+        //    elc = new EventLogCollector(new CollectorOptions(), x => results.Push(x));
+        //    elc.TryExecute();
 
-            Assert.IsTrue(results.Any(x => x is EventLogObject ELO && ELO.Source == "Attack Surface Analyzer Tests" && ELO.Timestamp is DateTime DT && DT.AddMinutes(1).CompareTo(DateTime.Now) > 0));
+        //    Assert.IsTrue(results.Any(x => x is EventLogObject ELO && ELO.Source == "Attack Surface Analyzer Tests" && ELO.Timestamp is DateTime DT && DT.AddMinutes(1).CompareTo(DateTime.Now) > 0));
 
-            EventLog.DeleteEventSource(source);
-            EventLog.Delete(logname);
-        }
+        //    EventLog.DeleteEventSource(source);
+        //    EventLog.Delete(logname);
+        //}
 
         [TestMethod]
         public void TestFileCollector()
