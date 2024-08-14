@@ -55,7 +55,6 @@ steps:
   inputs:
     jdkversion: JAVA_HOME_21_X64
 
-
 - task: SonarQubePublish@6
   inputs:
     pollingTimeoutSec: '300'
