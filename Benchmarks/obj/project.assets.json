@@ -12547,11 +12547,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\sonarcube_projects\\AttackSurfaceAnalyzer\\Benchmarks\\Benchmarks.csproj",
+      "projectUniqueName": "D:\\sonarcube_projects\\AttackSurfaceAnalyzerDevops\\Benchmarks\\Benchmarks.csproj",
       "projectName": "Benchmarks",
-      "projectPath": "D:\\sonarcube_projects\\AttackSurfaceAnalyzer\\Benchmarks\\Benchmarks.csproj",
+      "projectPath": "D:\\sonarcube_projects\\AttackSurfaceAnalyzerDevops\\Benchmarks\\Benchmarks.csproj",
       "packagesPath": "C:\\Users\\h.singh\\.nuget\\packages\\",
-      "outputPath": "D:\\sonarcube_projects\\AttackSurfaceAnalyzer\\Benchmarks\\obj\\",
+      "outputPath": "D:\\sonarcube_projects\\AttackSurfaceAnalyzerDevops\\Benchmarks\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\h.singh\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -12566,8 +12566,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\sonarcube_projects\\AttackSurfaceAnalyzer\\Lib\\Lib.csproj": {
-              "projectPath": "D:\\sonarcube_projects\\AttackSurfaceAnalyzer\\Lib\\Lib.csproj"
+            "D:\\sonarcube_projects\\AttackSurfaceAnalyzerDevops\\Lib\\Lib.csproj": {
+              "projectPath": "D:\\sonarcube_projects\\AttackSurfaceAnalyzerDevops\\Lib\\Lib.csproj"
             }
           }
         }
@@ -12621,7 +12621,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206\\RuntimeIdentifierGraph.json"
       }
     }
   }

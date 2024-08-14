@@ -13801,11 +13801,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\sonarcube_projects\\AttackSurfaceAnalyzer\\Tests\\Tests.csproj",
+      "projectUniqueName": "D:\\sonarcube_projects\\AttackSurfaceAnalyzerDevops\\Tests\\Tests.csproj",
       "projectName": "AsaTests",
-      "projectPath": "D:\\sonarcube_projects\\AttackSurfaceAnalyzer\\Tests\\Tests.csproj",
+      "projectPath": "D:\\sonarcube_projects\\AttackSurfaceAnalyzerDevops\\Tests\\Tests.csproj",
       "packagesPath": "C:\\Users\\h.singh\\.nuget\\packages\\",
-      "outputPath": "D:\\sonarcube_projects\\AttackSurfaceAnalyzer\\Tests\\obj\\",
+      "outputPath": "D:\\sonarcube_projects\\AttackSurfaceAnalyzerDevops\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\h.singh\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -13820,11 +13820,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\sonarcube_projects\\AttackSurfaceAnalyzer\\Cli\\Cli.csproj": {
-              "projectPath": "D:\\sonarcube_projects\\AttackSurfaceAnalyzer\\Cli\\Cli.csproj"
+            "D:\\sonarcube_projects\\AttackSurfaceAnalyzerDevops\\Cli\\Cli.csproj": {
+              "projectPath": "D:\\sonarcube_projects\\AttackSurfaceAnalyzerDevops\\Cli\\Cli.csproj"
             },
-            "D:\\sonarcube_projects\\AttackSurfaceAnalyzer\\Lib\\Lib.csproj": {
-              "projectPath": "D:\\sonarcube_projects\\AttackSurfaceAnalyzer\\Lib\\Lib.csproj"
+            "D:\\sonarcube_projects\\AttackSurfaceAnalyzerDevops\\Lib\\Lib.csproj": {
+              "projectPath": "D:\\sonarcube_projects\\AttackSurfaceAnalyzerDevops\\Lib\\Lib.csproj"
             }
           }
         }
@@ -13878,7 +13878,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206\\RuntimeIdentifierGraph.json"
       }
     }
   }

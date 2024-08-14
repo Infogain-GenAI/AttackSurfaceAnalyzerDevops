@@ -6,14 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "Benchmarks/2.4.0-alpha-g": {
+      "Benchmarks/0.0.0-g3b67c41612": {
         "dependencies": {
           "BenchmarkDotNet": "0.13.0",
           "Microsoft.CST.AttackSurfaceAnalyzer": "0.0.0",
           "Nerdbank.GitVersioning": "3.4.231",
           "System.Data.SQLite": "1.0.114.4",
           "murmurhash": "1.0.3",
-          "AsaLib": "2.4.0.0"
+          "AsaLib": "0.0.0.0"
         },
         "runtime": {
           "Benchmarks.dll": {}
@@ -3308,18 +3308,18 @@
           "AsaLib.dll": {}
         }
       },
-      "AsaLib/2.4.0.0": {
+      "AsaLib/0.0.0.0": {
         "runtime": {
           "AsaLib.dll": {
-            "assemblyVersion": "2.4.0.0",
-            "fileVersion": "2.4.0.0"
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.26427"
           }
         }
       }
     }
   },
   "libraries": {
-    "Benchmarks/2.4.0-alpha-g": {
+    "Benchmarks/0.0.0-g3b67c41612": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -4925,7 +4925,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AsaLib/2.4.0.0": {
+    "AsaLib/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

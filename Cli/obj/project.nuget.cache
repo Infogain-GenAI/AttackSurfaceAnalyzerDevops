@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NPoy7amdBn9bCffEQ3FPBzyNMeQ2xjytAzukOODvbUEijBqMb3O7m0hW3TfXBwF4mcJNQ8oJOHjaGO/xjvyFuw==",
+  "dgSpecHash": "lzsw0KdrzDIQ4SXdJnC9g1uXCl/phk1G/riA79Wdw6NSTW01OBpe/rVv+wWp7DoAtVbirhdGsv7kwsX5e5psbg==",
   "success": true,
-  "projectFilePath": "D:\\sonarcube_projects\\AttackSurfaceAnalyzer\\Cli\\Cli.csproj",
+  "projectFilePath": "D:\\sonarcube_projects\\AttackSurfaceAnalyzerDevops\\Cli\\Cli.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\h.singh\\.nuget\\packages\\commandlineparser\\2.8.0\\commandlineparser.2.8.0.nupkg.sha512",
     "C:\\Users\\h.singh\\.nuget\\packages\\comparenetobjects\\4.73.0\\comparenetobjects.4.73.0.nupkg.sha512",

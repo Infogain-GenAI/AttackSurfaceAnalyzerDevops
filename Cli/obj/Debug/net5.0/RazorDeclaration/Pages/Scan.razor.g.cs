@@ -13,112 +13,112 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Cli.Pages
     using global::System.Threading.Tasks;
     using global::Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\_Imports.razor"
+#line 1 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\_Imports.razor"
+#line 2 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\_Imports.razor"
+#line 3 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\_Imports.razor"
+#line 4 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\_Imports.razor"
+#line 5 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\_Imports.razor"
+#line 6 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\_Imports.razor"
+#line 7 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\_Imports.razor"
+#line 8 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\_Imports.razor"
 using Microsoft.CST.AttackSurfaceAnalyzer.Cli.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\_Imports.razor"
+#line 9 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\_Imports.razor"
 using Microsoft.CST.AttackSurfaceAnalyzer.Types;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\_Imports.razor"
+#line 10 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\_Imports.razor"
 using Microsoft.CST.OAT.Blazor.Components;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\_Imports.razor"
+#line 11 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\_Imports.razor"
 using Microsoft.CST.OAT.Blazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\_Imports.razor"
+#line 12 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\_Imports.razor"
 using Microsoft.CST.AttackSurfaceAnalyzer.Cli.Components;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\_Imports.razor"
+#line 13 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\_Imports.razor"
 using Microsoft.CST.AttackSurfaceAnalyzer.Cli.Components.States;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 14 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\_Imports.razor"
+#line 14 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\_Imports.razor"
 using System.Threading;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 15 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\_Imports.razor"
+#line 15 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\_Imports.razor"
 using Microsoft.CST.AttackSurfaceAnalyzer.Objects;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 16 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\_Imports.razor"
+#line 16 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\_Imports.razor"
 using Microsoft.CST.AttackSurfaceAnalyzer.Collectors;
 
 #line default
@@ -133,7 +133,7 @@ using Microsoft.CST.AttackSurfaceAnalyzer.Collectors;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "D:\sonarcube_projects\AttackSurfaceAnalyzer\Cli\Pages\Scan.razor"
+#line 34 "d:\sonarcube_projects\AttackSurfaceAnalyzerDevops\Cli\Pages\Scan.razor"
        
     enum PageState
     {

@@ -13008,11 +13008,11 @@
   "project": {
     "version": "0.0.0",
     "restore": {
-      "projectUniqueName": "d:\\sonarcube_projects\\AttackSurfaceAnalyzer\\Lib\\Lib.csproj",
+      "projectUniqueName": "d:\\sonarcube_projects\\AttackSurfaceAnalyzerDevops\\Lib\\Lib.csproj",
       "projectName": "Microsoft.CST.AttackSurfaceAnalyzer",
-      "projectPath": "d:\\sonarcube_projects\\AttackSurfaceAnalyzer\\Lib\\Lib.csproj",
+      "projectPath": "d:\\sonarcube_projects\\AttackSurfaceAnalyzerDevops\\Lib\\Lib.csproj",
       "packagesPath": "C:\\Users\\h.singh\\.nuget\\packages\\",
-      "outputPath": "d:\\sonarcube_projects\\AttackSurfaceAnalyzer\\Lib\\obj\\",
+      "outputPath": "d:\\sonarcube_projects\\AttackSurfaceAnalyzerDevops\\Lib\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\h.singh\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -13191,7 +13191,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206\\RuntimeIdentifierGraph.json"
       }
     }
   }
