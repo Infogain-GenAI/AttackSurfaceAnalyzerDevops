@@ -54,7 +54,7 @@
 
     async void BeginMonitor()
     {
-        appData.RunId = UseTimestamp ? DateTime.Now.ToString() : Convert.ToDateTime(RunIdInput).ToString();
+        appData.RunId = UseTimestamp ? DateTime.Now.ToString() : RunIdInput;
         timer = new System.Threading.Timer((_) => InvokeAsync(() => StateHasChanged()), null, 0, 100);
         appData.MonitorOptions.RunId = appData.MonitorRunId;
 
