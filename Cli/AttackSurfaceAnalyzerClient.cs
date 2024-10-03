@@ -1066,6 +1066,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Cli
                     var analysesHash = opts.AnalysesFile.GetHash();
                     OAT.Utils.Strings.Setup();
                     OAT.Utils.Helpers.PrintViolations(violations);
+                    //check if any rule violations in file
                     if (violations.Any())
                     {
                         Log.Error("Encountered {0} issues with rules in {1}. Skipping analysis.", violations.Count(), opts.AnalysesFile?.Source ?? "Embedded");
