@@ -126,7 +126,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Cli
             Log.CloseAndFlush();
             Environment.Exit((int)argsResult);
         }
-
+        //Load rules
         /// <summary>
         /// Loads the rules from the provided file, if it is not null or empty.  Or falls back to the embedded rules if it is.
         /// </summary>

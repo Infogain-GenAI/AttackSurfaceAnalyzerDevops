@@ -113,7 +113,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Objects
         /// </summary>
         /// <returns></returns>
         public string GetHash() => CryptoHelpers.CreateHash(JsonConvert.SerializeObject(this));
-
+        //Load rules from file
         /// <summary>
         /// Load rules from a serialized RuleFile on disk.
         /// </summary>
@@ -147,7 +147,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Objects
             }
             return new RuleFile();
         }
-
+        //load rules embedded
         /// <summary>
         /// Load the default AttackSurfaceAnalyzer Rules embedded in the binary.
         /// </summary>
