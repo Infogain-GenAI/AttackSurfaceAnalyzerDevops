@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace Microsoft.CST.AttackSurfaceAnalyzer.Objects
 {
+    //Asa Run
     public class AsaRun
     {
         public AsaRun(string RunId, DateTime Timestamp, string Version, PLATFORM Platform, List<RESULT_TYPE> ResultTypes, RUN_TYPE Type)

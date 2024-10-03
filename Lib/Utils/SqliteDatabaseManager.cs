@@ -101,6 +101,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Utils
             Connections.AsParallel().ForAll(x => x.Commit());
         }
 
+        //Delete Run
         public override void DeleteRun(string runid)
         {
             _ = MainConnection ?? throw new NullReferenceException(Strings.Get("MainConnection"));
@@ -642,7 +643,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Utils
             }
             return outDict;
         }
-
+        //Get Run
         public override AsaRun? GetRun(string RunId)
         {
             _ = MainConnection ?? throw new NullReferenceException(Strings.Get("MainConnection"));

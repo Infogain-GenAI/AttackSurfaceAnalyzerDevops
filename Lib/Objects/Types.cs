@@ -201,7 +201,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Types
         MACOS,
         UNKNOWN
     }
-
+    //Result type
     /// <summary>
     ///     Specifies the child class type for a CollectObject
     /// </summary>

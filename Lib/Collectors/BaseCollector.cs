@@ -12,6 +12,7 @@ using System.Threading;
 
 namespace Microsoft.CST.AttackSurfaceAnalyzer.Collectors
 {
+    //base collector
     /// <summary>
     ///     Base class for all collectors.
     /// </summary>

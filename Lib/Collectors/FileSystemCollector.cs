@@ -23,6 +23,7 @@ using System.Threading.Tasks;
 
 namespace Microsoft.CST.AttackSurfaceAnalyzer.Collectors
 {
+    // FilesystemCollector
     /// <summary>
     ///     Collects Filesystem Data from the local file system.
     /// </summary>

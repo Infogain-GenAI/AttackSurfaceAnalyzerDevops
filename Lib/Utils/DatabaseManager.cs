@@ -86,6 +86,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Utils
 
         public abstract Dictionary<RESULT_TYPE, int> GetResultTypesAndCounts(string runId);
 
+        //Get Run
         public abstract AsaRun? GetRun(string RunId);
 
         public abstract List<string> GetRuns(RUN_TYPE type);
@@ -110,6 +111,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Utils
 
         public abstract void SetSettings(Settings settings);
 
+        //Database setup
         public abstract ASA_ERROR Setup();
 
         public abstract void TrimToLatest();
