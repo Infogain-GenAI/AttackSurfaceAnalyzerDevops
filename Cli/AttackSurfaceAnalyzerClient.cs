@@ -350,7 +350,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Cli
             Thread.Sleep(sleep);
             AsaHelpers.OpenBrowser(new System.Uri("http://localhost:5000")); /*DevSkim: ignore DS137138*/
         }
-
+        //run config command
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2241:Provide correct arguments to formatting methods", Justification = "<Pending>")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Globalization", "CA1305:Specify IFormatProvider", Justification = "<Pending>")]
         private static ASA_ERROR RunConfigCommand(ConfigCommandOptions opts)

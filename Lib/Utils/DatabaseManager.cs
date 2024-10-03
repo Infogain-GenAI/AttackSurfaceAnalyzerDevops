@@ -15,7 +15,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Utils
 
         public string Location { get; internal set; } = "asa.db";
         public abstract int QueueSize { get; }
-
+        //destroy
         public static void Destroy(string sqliteFilename)
         {
             var directory = Path.GetDirectoryName(sqliteFilename);
@@ -113,7 +113,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Utils
 
         public abstract void SetSettings(Settings settings);
 
-        //Database setup
+        //Database Setup
         public abstract ASA_ERROR Setup();
 
         public abstract void TrimToLatest();
