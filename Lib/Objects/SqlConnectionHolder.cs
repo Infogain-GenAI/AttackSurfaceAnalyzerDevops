@@ -14,6 +14,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Objects
 {
     public class SqlConnectionHolder
     {
+        //Establish sqllite connection
         public SqlConnectionHolder(string databaseFilename, DBSettings? dBSettings = null)
         {
             settings = dBSettings ?? new DBSettings();

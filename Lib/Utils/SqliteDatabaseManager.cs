@@ -912,6 +912,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Utils
             }
         }
 
+        //setup
         public override ASA_ERROR Setup()
         {
             // Clean up if we were already open.

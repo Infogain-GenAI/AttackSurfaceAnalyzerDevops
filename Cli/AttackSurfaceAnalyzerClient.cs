@@ -44,6 +44,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Cli
 #endif
         }
 
+        //Database setup
         private static void SetupDatabase(CommandOptions opts)
         {
             var dbSettings = new DBSettings()
