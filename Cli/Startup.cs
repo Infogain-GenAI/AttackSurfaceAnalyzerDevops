@@ -12,6 +12,7 @@ using Tewr.Blazor.FileReader;
 
 namespace Microsoft.CST.AttackSurfaceAnalyzer.Cli
 {
+    //startup
     public class Startup
     {
         public Startup(IConfiguration configuration)

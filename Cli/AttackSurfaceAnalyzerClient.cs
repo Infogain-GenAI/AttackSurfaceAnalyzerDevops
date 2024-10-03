@@ -320,7 +320,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Cli
                 Environment.Exit((int)errorCode);
             }
         }
-
+        //Run GUI Command
         private static ASA_ERROR RunGuiCommand(GuiCommandOptions opts)
         {
             var server = Host.CreateDefaultBuilder(Array.Empty<string>())
