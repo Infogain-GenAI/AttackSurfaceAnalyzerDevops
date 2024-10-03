@@ -117,6 +117,7 @@
             CompareOneOptions.FirstRunId = appData.ExportCollectCommandOptions.FirstRunId;
             CompareOneOptions.SecondRunId = appData.ExportCollectCommandOptions.SecondRunId;
             var results = AttackSurfaceAnalyzerClient.CompareRuns(CompareOneOptions);
+            //insert result
             AttackSurfaceAnalyzerClient.InsertCompareResults(results, CompareOneOptions.FirstRunId, CompareOneOptions.SecondRunId, appData.CompareCommandOptions.AnalysesFile?.GetHash() ?? string.Empty);
         });
 

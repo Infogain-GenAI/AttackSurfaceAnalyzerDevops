@@ -771,6 +771,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Utils
             return null;
         }
 
+        //Insert Analyzed
         public override void InsertAnalyzed(CompareResult objIn)
         {
             if (objIn != null && MainConnection != null)
@@ -798,7 +799,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Utils
             }
         }
 
-        //Insert Compare run
+        //Insert Compare Run
         public override void InsertCompareRun(string? firstRunId, string secondRunId, string analysesHash, RUN_STATUS runStatus)
         {
             _ = MainConnection ?? throw new NullReferenceException(Strings.Get("MainConnection"));

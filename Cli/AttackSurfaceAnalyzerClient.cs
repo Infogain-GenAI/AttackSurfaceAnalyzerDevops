@@ -282,7 +282,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Cli
             Log.Information("{0} Rules successfully verified. ✅", ruleFile.Rules.Count());
             return ASA_ERROR.NONE;
         }
-
+        //insert compare results
         internal static void InsertCompareResults(ConcurrentDictionary<(RESULT_TYPE, CHANGE_TYPE), List<CompareResult>> results, string? FirstRunId, string SecondRunId, string AnalysesHash)
         {
             if (DatabaseManager is null)
