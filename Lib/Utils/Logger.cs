@@ -20,6 +20,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Utils
             Setup(debug, verbose, false);
         }
 
+        //setup
         public static void Setup(bool debug, bool verbose, bool quiet)
         {
             (Verbose, Debug, Quiet) = (verbose, debug, quiet);

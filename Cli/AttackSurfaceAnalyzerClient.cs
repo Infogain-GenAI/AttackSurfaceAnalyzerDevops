@@ -34,6 +34,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Cli
 
         public static DatabaseManager? DatabaseManager { get; private set; }
 
+        //setup logging
         private static void SetupLogging(CommandOptions opts)
         {
 #if DEBUG
