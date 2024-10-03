@@ -337,6 +337,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Cli
             {
                 ((Action)(async () =>
                 {
+                    //SleepAndOpenBrowser
                     await Task.Run(() => SleepAndOpenBrowser(1500)).ConfigureAwait(false);
                 }))();
             }
@@ -344,7 +345,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Cli
             server.Run();
             return 0;
         }
-
+        //SleepAndOpenBrowser
         private static void SleepAndOpenBrowser(int sleep)
         {
             Thread.Sleep(sleep);
