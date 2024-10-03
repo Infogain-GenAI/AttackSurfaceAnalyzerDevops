@@ -798,6 +798,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Utils
             }
         }
 
+        //Insert Compare run
         public override void InsertCompareRun(string? firstRunId, string secondRunId, string analysesHash, RUN_STATUS runStatus)
         {
             _ = MainConnection ?? throw new NullReferenceException(Strings.Get("MainConnection"));

@@ -99,6 +99,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Utils
 
         public abstract void InsertAnalyzed(CompareResult objIn);
 
+        //Insert compare Run
         public abstract void InsertCompareRun(string? firstRunId, string secondRunId, string analysesHash, RUN_STATUS runStatus);
 
         public abstract List<(string firstRunId, string secondRunId, string analysesHash, RUN_STATUS runStatus)> GetCompareRuns();

@@ -1023,6 +1023,7 @@ namespace Microsoft.CST.AttackSurfaceAnalyzer.Cli
             return comparators;
         }
 
+        //Compare runs
         public static ConcurrentDictionary<(RESULT_TYPE, CHANGE_TYPE), List<CompareResult>> CompareRuns(CompareCommandOptions opts)
         {
             if (opts is null)
