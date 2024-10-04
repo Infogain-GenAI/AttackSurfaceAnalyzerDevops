@@ -118,7 +118,7 @@
             CompareOneOptions.SecondRunId = appData.ExportCollectCommandOptions.SecondRunId;
             var results = AttackSurfaceAnalyzerClient.CompareRuns(CompareOneOptions);
             //insert result
-            AttackSurfaceAnalyzerClient.InsertCompareResults(results, CompareOneOptions.FirstRunId, CompareOneOptions.SecondRunId, appData.CompareCommandOptions.AnalysesFile?.GetHash() ?? string.Empty);
+            AttackSurfaceAnalyzerClient.InsertCompareResults(results, Convert.ToDateTime(CompareOneOptions.FirstRunId).ToString("MM/dd/yyyy"), Convert.ToDateTime(CompareOneOptions.SecondRunId).ToString("MM/dd/yyyy"), appData.CompareCommandOptions.AnalysesFile?.GetHash() ?? string.Empty);
         });
 
         return ASA_ERROR.NONE;
