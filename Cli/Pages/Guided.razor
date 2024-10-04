@@ -149,7 +149,7 @@
             CompareOneOptions.FirstRunId = appData.ExportCollectCommandOptions.FirstRunId;
             CompareOneOptions.SecondRunId = appData.ExportCollectCommandOptions.SecondRunId ?? string.Empty;
             var results = AttackSurfaceAnalyzerClient.CompareRuns(CompareOneOptions);
-            AttackSurfaceAnalyzerClient.InsertCompareResults(results, appData.ExportCollectCommandOptions.FirstRunId, appData.ExportCollectCommandOptions.SecondRunId ?? string.Empty, appData.CompareCommandOptions.AnalysesFile?.GetHash() ?? "");
+            AttackSurfaceAnalyzerClient.InsertCompareResults(results, Convert.ToDateTime(appData.ExportCollectCommandOptions.FirstRunId).ToString("MM/dd/yyyy"), appData.ExportCollectCommandOptions.SecondRunId ?? string.Empty, appData.CompareCommandOptions.AnalysesFile?.GetHash() ?? "");
         });
 
         await Task.Factory.StartNew(() =>
@@ -159,7 +159,7 @@
             CompareTwoOptions.FirstRunId = null;
             CompareTwoOptions.SecondRunId = appData.MonitorRunId;
             var results = AttackSurfaceAnalyzerClient.CompareRuns(CompareTwoOptions);
-            AttackSurfaceAnalyzerClient.InsertCompareResults(results, null, appData.MonitorRunId, appData.CompareCommandOptions.AnalysesFile?.GetHash() ?? "");
+            AttackSurfaceAnalyzerClient.InsertCompareResults(results, null, Convert.ToDateTime(appData.MonitorRunId).ToString("MM/dd/yyyy"), appData.CompareCommandOptions.AnalysesFile?.GetHash() ?? "");
         });
         return ASA_ERROR.NONE;
     }
